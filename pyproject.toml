@@ -1,26 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "networkinterfaces"
+version = "0.1.0"
 description = "A module for working with network interfaces in Linux"
-version = "0.1"
 readme = "README.md"
 authors = [
-    { name = "Brandon Hammond", email="newdaynewburner@gmail.com" },
+    { name = "Brandon Hammond", email = "newdaynewburner@gmail.com" },
 ]
-license = {file = "LICENSE.txt"}
+license = { file = "LICENSE.txt" }
 requires-python = ">=3.6"
 dependencies = []
 classifiers = [
     "Environment :: Console",
     "License :: OSI Approved :: MIT License",
-    "Operating System :: Linux",
+    "Operating System :: POSIX :: Linux",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.11",
-    "Topic :: Networking"
+    "Topic :: System :: Networking"
 ]
 
 [project.urls]
-homepage = "https://github.com/newdaynewburner/networkinterfaces"
-repository = "https://github.com/newdaynewburner/networkinterfaces"
+Homepage = "https://github.com/newdaynewburner/networkinterfaces"
+Repository = "https://github.com/newdaynewburner/networkinterfaces"
