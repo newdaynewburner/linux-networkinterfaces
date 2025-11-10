@@ -1,0 +1,25 @@
+[project]
+name = "networkinterfaces"
+description = "A module for working with network interfaces in Linux"
+readme = "README.md"
+authors = [
+    { name = "Brandon Hammond", email="newdaynewburner@gmail.com" },
+]
+license = {file = "LICENSE.txt"}
+requires-python = ">=3.6"
+dependencies = []
+classifiers = [
+    "Environment :: Console",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Linux",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Networking"
+]
+
+[project.urls]
+homepage = "https://github.com/newdaynewburner/networkinterfaces"
+repository = "https://github.com/newdaynewburner/networkinterfaces"

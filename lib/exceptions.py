@@ -4,22 +4,22 @@ lib/exceptions.py
 Custom exceptions defined here
 """
 
-class GetAttributeError(Exception):
+class SystemCallError(Exception):
+    """ Raised when a system call returns a non-zero exit code
+    """
     def __init__(self, message):
         super().__init__(message)
 
-class SetAttributeError(Exception):
+class AttributeSetSilentFailError(Exception):
+    """ Raised when an attempt to set an attribute of the interface is made without returning an error code
+    but where the attribute remains unchanged in actuality
+    """
     def __init__(self, message):
         super().__init__(message)
 
-class StateChangeError(Exception):
-    def __init__(self, message):
-        super().__init__(message)
-
-class ModeChangeError(Exception):
-    def __init__(self, message):
-        super().__init__(message)
-
-class ChannelChangeError(Exception):
+# TEMPLATE --- DELETE IT AFTER, BEBOP!!!
+class Error(Exception):
+    """
+    """
     def __init__(self, message):
         super().__init__(message)

@@ -1,2 +1,2 @@
 # networkinterfaces
-A Python module for dealing with network interfaces
+A module for working with network interfaces in Linux
