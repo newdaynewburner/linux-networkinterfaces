@@ -1,6 +1,7 @@
 [project]
 name = "networkinterfaces"
 description = "A module for working with network interfaces in Linux"
+version = "0.1"
 readme = "README.md"
 authors = [
     { name = "Brandon Hammond", email="newdaynewburner@gmail.com" },
