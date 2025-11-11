@@ -1,10 +1,7 @@
 """
-networkinterfaces
-
-Version 0.1
+linux-networkinterfaces (v0.2.0) [https://github.com/newdaynewburner/linux-networkinterfaces]
 By Brandon Hammond <newdaynewburner@gmail.com>
 
-A module for working with network interfaces in Linux
+"trddddddddddddddddddd" - Thus saith the Bones, imparted to us this day of 11/11/25 (Preserved for prosterity, very rare do dogs type, must be important but beyond our comprehension)
 """
 
-from .networkinterfaces import Interface, WiredInterface, WirelessInterface
