@@ -1,0 +1,7 @@
+LICENSE.txt
+README.md
+pyproject.toml
+src/linux_networkinterfaces.egg-info/PKG-INFO
+src/linux_networkinterfaces.egg-info/SOURCES.txt
+src/linux_networkinterfaces.egg-info/dependency_links.txt
+src/linux_networkinterfaces.egg-info/top_level.txt

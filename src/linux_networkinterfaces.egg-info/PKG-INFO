@@ -1,0 +1,85 @@
+Metadata-Version: 2.4
+Name: linux-networkinterfaces
+Version: 0.2.0
+Summary: A module for working with network interfaces in Linux
+Author-email: Brandon Hammond <newdaynewburner@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2025 Brandon Hammond
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Homepage, https://github.com/newdaynewburner/linux-networkinterfaces
+Project-URL: Repository, https://github.com/newdaynewburner/linux-networkinterfaces
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: System :: Networking
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Dynamic: license-file
+
+# linux-networkinterfaces (v0.2.0) [https://github.com/newdaynewburner/linux-networkinterfaces]
+## By Brandon Hammond <newdaynewburner@gmail.com>
+A module for working with network interfaces in Linux. It provides objects for controlling and getting information from the network interfaces on your system, using subprocess to execute system
+calls behind the scenes.
+
+### Quick Start Guide
+Currently it supports working with wired and wireless interfaces, through the WiredInterface and WirelessInterface objects respectively, and there is also a superclass
+called Interface that is the parent of the WiredInterface and WirelessInterface objects, and it contains methods that are not specific to any particular interface type, and it can be used to create
+custom objects for other interface types like bridges and what not, although support for those will be added in the future. Below is a short usage example:
+
+```
+from linuxnetworkinterfaces import WiredInterface, WirelessInterface
+
+wired = WiredInterface("eth0") # Controls the 'eth0' wired interface
+wireless = WirelessInterface("wlan0", manager="networkmanager") # Controls the 'wlan0' wireless interface, which is controlled by the NetworkManager network manager
+
+# Change the interfaces state
+wired.set_state("up") # Bring it up
+wired.set_state("down") # Take it down
+
+# Show some attributes
+state = wired.state # Current state
+flags = wired,device_flags # Device flags that are currently set
+print(state)
+for flag in flags:
+    print(flag)
+
+# Putting a wireless interface into and taking it out of monitor mode (NetworkManager friendly!)
+# Starting monitor mode
+wireless.stop_management() # FOR NETWORKMANAGER COMPATABILITY
+wireless.set_state("down")
+wireless.set_mode("monitor")
+wireless.set_state("up")
+
+# Stopping monitor mode
+wireless.set_state("down")
+wireless.set_mode("managed")
+wireless.start_management() # FOR NETWORKMANAGER COMPATABILITY
+```
+
+### Issues
+If you have any problems, feature requests, or anything else just shoot me an email or open an issue on the module's GitHub page, typically I'll respond quickly.
